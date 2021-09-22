@@ -1,35 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
-import React from "react"
-import FirearmContainer from './FirearmContainer';
+//import React from "react"
+import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 
+//render App on localhost 3000 and backend on localhost 3001, in CLI "PORT=3001 npm start" for backend
+
+
 function App() {
+
+  fetch('http://localhost:3001/toys')
+    .then(r => r.json())
+    .then(data => console.log(data))
+
+
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <div>
-      <FirearmContainer />
+    <div className = "App">
+      <Firearms/>
       <FirearmForm /> 
     </div>
   );
   //App.js render a firearm container component and new firearm form component (for POSTing)
-      //firearm container component would render firearm cards
-  //nav component? about component?
+      //firearmscomponent would render firearm cards
+  //nav component
+
+  //which component should handle fetch to get data
+    //app component
+  //which components should have state? 
+    //-form -toys "container" component
+    // app component
+
+    //have state for child components live in app component and have app handle fetching data
 }
 
 export default App;

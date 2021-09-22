@@ -1,12 +1,13 @@
 import React from "react"
 
 function FirearmForm(){
-    return
+    return(
     <div>
         <form>
-            User fills in object data
+            <h3>Toy form for user to fill out</h3>
         </form>
     </div>
+    )
 }
 
 export default FirearmForm
