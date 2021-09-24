@@ -1,4 +1,4 @@
-import React from "reatct"
+import React from "react"
 
 function FirearmCard(){
     return(

@@ -11,7 +11,7 @@ function App() {
   useEffect(()=>{
     fetch('http://localhost:3000/firearms')
       .then(r => r.json())
-      .then(firearmData => console.log(firearmData))
+      .then(firearmData => setFirearms(firearmData))
     },
   []
   )
