@@ -1,25 +1,38 @@
 import './App.css';
-//import React from "react"
+import React from "react"
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
+import {useEffect, useState} from "react"
 
 //render App on localhost 3001 in CLI "PORT=3001 npm start" for front end and backend on localhost 3000 (default)
 
 
 function App() {
 
-  fetch('http://localhost:3000/firearms')
-    .then(r => r.json())
-    .then(data => console.log(data))
+  const [firearms, setFirearms] = useState([]);
+
+  useEffect(()=>{
+    fetch('http://localhost:3000/firearms')
+      .then(r => r.json())
+      .then(firearmData => setFirearms(firearmData))
+    },
+  []
+  )
 
 
   return (
     <div className = "App">
-      <Firearms/>
+      <Firearms firearms = {firearms}/>
       <FirearmForm /> 
     </div>
   );
-  //App.js render a firearm container component and new firearm form component (for POSTing)
+  
+}
+
+export default App;
+
+
+//App.js render a firearm container component and new firearm form component (for POSTing)
       //firearmscomponent would render firearm cards
   //nav component
 
@@ -30,6 +43,3 @@ function App() {
     // app component
 
     //have state for child components live in app component and have app handle fetching data
-}
-
-export default App;
