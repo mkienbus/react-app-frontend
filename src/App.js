@@ -3,12 +3,12 @@ import './App.css';
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 
-//render App on localhost 3000 and backend on localhost 3001, in CLI "PORT=3001 npm start" for backend
+//render App on localhost 3001 in CLI "PORT=3001 npm start" for front end and backend on localhost 3000 (default)
 
 
 function App() {
 
-  fetch('http://localhost:3001/toys')
+  fetch('http://localhost:3000/firearms')
     .then(r => r.json())
     .then(data => console.log(data))
 
