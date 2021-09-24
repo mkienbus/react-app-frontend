@@ -2,7 +2,7 @@ import React from "react"
 // this is a "container" component because it renders other components
 
 function Firearms(firearms){
-    console.log(firearms)
+    //console.log(firearms)
     return(
     <div>
         <h1>Toys container</h1>

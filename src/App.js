@@ -4,9 +4,6 @@ import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import {useEffect, useState} from "react"
 
-//render App on localhost 3001 in CLI "PORT=3001 npm start" for front end and backend on localhost 3000 (default)
-
-
 function App() {
 
   const [firearms, setFirearms] = useState([]);
@@ -14,7 +11,7 @@ function App() {
   useEffect(()=>{
     fetch('http://localhost:3000/firearms')
       .then(r => r.json())
-      .then(firearmData => setFirearms(firearmData))
+      .then(firearmData => console.log(firearmData))
     },
   []
   )
