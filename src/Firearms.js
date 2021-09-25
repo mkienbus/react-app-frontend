@@ -2,9 +2,9 @@ import React from "react"
 import FirearmCard from "./FirearmCard"
 // this is a "container" component because it renders other components
 
-function Firearms(firearms){
+function Firearms({firearms}){
 
-    const allFirearms = firearms.map(firearm => <FirearmCard firearm = {firearm}/> )
+    const allFirearms = firearms.map(firearm => <FirearmCard key = {firearm.id} firearm = {firearm}/> )
 
     return(
         <div>

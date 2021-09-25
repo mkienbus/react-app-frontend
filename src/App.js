@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react"
+//import React from "react"
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import {useEffect, useState} from "react"
@@ -12,9 +12,7 @@ function App() {
     fetch('http://localhost:3000/firearms')
       .then(r => r.json())
       .then(firearmData => setFirearms(firearmData))
-    },
-  []
-  )
+    },[])
 
 
   return (

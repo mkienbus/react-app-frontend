@@ -1,9 +1,9 @@
 import React from "react"
 
-function FirearmCard(){
+function FirearmCard({firearm}){
     return(
         <div>
-            <h3>Firearm card </h3>
+            <h3>{firearm.name}</h3>
         </div>
     )
 }
