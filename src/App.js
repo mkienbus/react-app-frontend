@@ -1,5 +1,5 @@
 import './App.css';
-//import React from "react"
+import React from "react"
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import {useEffect, useState} from "react"
@@ -17,6 +17,7 @@ function App() {
 
   function newFirearm(newFirearm){
     console.log(newFirearm)
+    //setFirearms([...firearms, setFirearms])
   }
 
 
