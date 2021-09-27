@@ -7,6 +7,7 @@ function FirearmForm({newFirearm}){
 
     function handleSubmit(e){
         e.preventDefault()
+        setName('')
         fetch('http://localhost:3000/firearms',{
             method: "POST",
             headers: {
@@ -14,8 +15,9 @@ function FirearmForm({newFirearm}){
             },
             body: JSON.stringify({name: name})
         })
-        newFirearm({name: name})
-        //send POST fetch call from here, using "name" value as defined in state
+            .then((r) => r.json())
+            .then((firearm) => newFirearm(firearm))
+        //POST call, while getting access to all object keys including "id"
 
         
 

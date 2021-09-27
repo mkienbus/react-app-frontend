@@ -16,8 +16,7 @@ function App() {
 
 
   function newFirearm(newFirearm){
-    console.log(newFirearm)
-    //setFirearms([...firearms, setFirearms])
+    setFirearms([...firearms, newFirearm])
   }
 
 
