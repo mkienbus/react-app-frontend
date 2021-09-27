@@ -15,10 +15,15 @@ function App() {
     },[])
 
 
+  function newFirearm(newFirearm){
+    console.log(newFirearm)
+  }
+
+
   return (
     <div className = "App">
       <Firearms firearms = {firearms}/>
-      <FirearmForm /> 
+      <FirearmForm newFirearm = {newFirearm}/> 
     </div>
   );
   

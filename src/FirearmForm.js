@@ -1,23 +1,41 @@
 import React from "react"
+import {useState} from "react"
 
-function FirearmForm(){
+function FirearmForm(newFirearm){
+
+    const [name, setName] = useState("");
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(e.target)
+        fetch("http://localhost:3000/firearms",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({name: name})
+        });
+        //send POST fetch call from here, using "name" value as defined in state
+
+        newFirearm({name: name})
+
+        //newFirearm defined in App component, sends updated name state up to parent App component to trigger re-render
+
+    };
+
+    function handleChange(e){
+        setName(e.target.value)
+        //handleChange takes e.target.value "name" value and sets it to the state "name value", used in handleSubmit function
+        //keeps name state updated with value in use input field
     }
 
 
     return(
     <div>
         <form onSubmit = {handleSubmit}>
-            <label>Firearm:
-                <input id = "make" type = "text" defaultValue = "Make"/>
-                <input id = "model" type = "text" defaultValue = "Model"/>
+            <label>
+                Firearm:
+                    <input id = "firearmInfo" type = "text" value ={name} onChange = {(e) => handleChange(e)}/>
             </label>
-        <br></br>
-            <label>Picture:</label>
-                <input id = "picture" type = "text" defaultValue = "Upload picture"/>
                 <input type = "submit" value = "Add a new firearm"/>
         </form>
     </div>
