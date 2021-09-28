@@ -3,6 +3,7 @@ import React from "react"
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import Nav from "./Nav"
+import Home from "./Home"
 import {useEffect, useState} from "react"
 import {Route, Switch} from "react-router-dom"
 
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route exact path = "/firearms/new">
           <FirearmForm newFirearm = {newFirearm}/> 
+        </Route>
+        <Route exact path = "/">
+          <Home />
         </Route>
       </Switch>
     </div>
