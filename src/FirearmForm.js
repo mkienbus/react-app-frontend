@@ -18,9 +18,6 @@ function FirearmForm({newFirearm}){
             .then((r) => r.json())
             .then((firearm) => newFirearm(firearm))
         //POST call, while getting access to all object keys including "id"
-
-        
-
         //newFirearm defined in App component, sends updated name state up to parent App component to trigger re-render
 
     };
