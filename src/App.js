@@ -2,7 +2,9 @@ import './App.css';
 import React from "react"
 import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
+import Nav from "./Nav"
 import {useEffect, useState} from "react"
+import {Router, Switch} from "react-router-dom"
 
 function App() {
 
@@ -22,8 +24,15 @@ function App() {
 
   return (
     <div className = "App">
+      <Nav/>
+      <Switch>
+        <Router path = "/firearms">
       <Firearms firearms = {firearms}/>
+        </Router>
+        <Router path = "/firearms/new">
       <FirearmForm newFirearm = {newFirearm}/> 
+        </Router>
+      </Switch>
     </div>
   );
   
