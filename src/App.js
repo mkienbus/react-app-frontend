@@ -4,12 +4,15 @@ import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import Nav from "./Nav"
 import Home from "./Home"
+import FirearmShow from "./FirearmShow"
 import {useEffect, useState} from "react"
 import {Route, Switch} from "react-router-dom"
+
 
 function App() {
 
   const [firearms, setFirearms] = useState([]);
+  const [firearm, setFirearm] = useState([]);
 
   useEffect(()=>{
     fetch('http://localhost:3000/firearms')
@@ -35,6 +38,9 @@ function App() {
         </Route>
         <Route exact path = "/">
           <Home />
+        </Route>
+        <Route exact path = "/firearms/:id">
+          <FirearmShow/>
         </Route>
       </Switch>
     </div>
