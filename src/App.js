@@ -12,7 +12,7 @@ import {Route, Switch} from "react-router-dom"
 function App() {
 
   const [firearms, setFirearms] = useState([]);
-  const [firearm, setFirearm] = useState([]);
+  const [yolo, setFirearm] = useState({name: "yolo"});
 
   useEffect(()=>{
     fetch('http://localhost:3000/firearms')
@@ -25,13 +25,17 @@ function App() {
     setFirearms([...firearms, newFirearm])
   }
 
+  function handleClick(detailFirearm){
+    // alert(detailFirearm.name)
+    setFirearm({...yolo, ...{name: "update"}});
+  }
 
   return (
     <div className = "App">
       <Nav/>
       <Switch>
         <Route exact path = "/firearms">
-          <Firearms firearms = {firearms}/>
+          <Firearms firearms = {firearms} handleClick = {handleClick}/>
         </Route>
         <Route exact path = "/firearms/new">
           <FirearmForm newFirearm = {newFirearm}/> 
@@ -40,7 +44,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path = "/firearms/:id">
-          <FirearmShow/>
+          <FirearmShow firearm = {yolo}/>
         </Route>
       </Switch>
     </div>

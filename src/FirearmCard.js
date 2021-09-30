@@ -1,13 +1,10 @@
 import React from "react"
-import { Link } from "react-router-dom";
-import FirearmShow from "./FirearmShow";
 
 
-
-function FirearmCard({firearm}){
+function FirearmCard({firearm, handleClick}){
     return(
         <div>
-            <Link to={`/firearms/${firearm.id}`} component={FirearmShow(firearm)}>{firearm.name}</Link>
+            <a href = {`/firearms/${firearm.id}`} onClick={()=> handleClick(firearm)}>{firearm.name}</a>
         </div>
     )
     //add NavLink to each firearm to click to a "more info"
