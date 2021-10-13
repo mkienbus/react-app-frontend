@@ -4,6 +4,7 @@ import Firearms from './Firearms';
 import FirearmForm from './FirearmForm';
 import Nav from "./Nav"
 import Home from "./Home"
+import ClickMe from "./ClickMe"
 import FirearmShow from "./FirearmShow"
 import {useEffect, useState} from "react"
 import {Route, Switch} from "react-router-dom"
@@ -29,9 +30,11 @@ function App() {
   function handleClick(detailFirearm) {
   }
 
+
   return (
     <div className = "App">
       <Nav/>
+      <ClickMe />
       <Switch>
         <Route exact path = "/firearms">
           <Firearms firearms = {firearms} handleClick = {handleClick}/>
