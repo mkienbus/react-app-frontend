@@ -34,7 +34,8 @@ function App() {
   return (
     <div className = "App">
       <Nav/>
-      <ClickMe />
+      {/* removed ClickMe as isn't part of original application */}
+      {/* <ClickMe /> */}
       <Switch>
         <Route exact path = "/firearms">
           <Firearms firearms = {firearms} handleClick = {handleClick}/>
